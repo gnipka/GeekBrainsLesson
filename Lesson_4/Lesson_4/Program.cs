@@ -13,7 +13,7 @@ namespace Lesson_4
             Console.WriteLine(GetFullName("Анна", "Гнипель", "Владимировна"));
             Console.WriteLine(GetFullName("Антон", "Гусев", "Александрович"));
             Console.WriteLine(GetFullName("Сергей", "Чумаков", "Иванович"));
-            Console.WriteLine(GetFullName("Дарья", "Шаманова", "Сергеевна"));
+            Console.WriteLine(GetFullName("Елизавета", "Шаманова", "Сергеевна"));
         }
     }
 }
