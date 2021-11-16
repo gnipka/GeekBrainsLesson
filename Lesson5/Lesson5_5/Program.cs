@@ -48,10 +48,12 @@ namespace Lesson5_5
 
         public static ListToDo DeserializeFromXml()
         {
-            string xmlText = File.ReadAllText("tasks.xml");
-            StringReader stringReader = new StringReader(xmlText);
-            XmlSerializer serializer = new XmlSerializer(typeof(ListToDo));
-            return (ListToDo)serializer.Deserialize(stringReader);
+
+                string xmlText = File.ReadAllText("tasks.xml");
+                StringReader stringReader = new StringReader(xmlText);
+                XmlSerializer serializer = new XmlSerializer(typeof(ListToDo));
+                return (ListToDo)serializer.Deserialize(stringReader);
+
         }
 
         static void Main(string[] args)
@@ -80,10 +82,17 @@ namespace Lesson5_5
                         {
                             listToDo.tasks.Clear();
                         }
-                        listToDo = DeserializeFromXml();
-                        for (int i = 0; i < listToDo.tasks.Count; i++)
+                        if (File.Exists("tasks.xml"))
                         {
-                            Console.WriteLine($"{i + 1}. { listToDo.tasks[i].IsDone} { listToDo.tasks[i].Title}");
+                            listToDo = DeserializeFromXml();
+                            for (int i = 0; i < listToDo.tasks.Count; i++)
+                            {
+                                Console.WriteLine($"{i + 1}. { listToDo.tasks[i].IsDone} { listToDo.tasks[i].Title}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Задач нет");
                         }
                         break;
                     case "2":
@@ -91,16 +100,23 @@ namespace Lesson5_5
                         {
                             listToDo.tasks.Clear();
                         }
-                        listToDo = DeserializeFromXml();
-                        for (int i = 0; i < listToDo.tasks.Count; i++)
+                        if (File.Exists("tasks.xml"))
                         {
-                            Console.WriteLine($"{i + 1}. { listToDo.tasks[i].IsDone} { listToDo.tasks[i].Title}");
+                            listToDo = DeserializeFromXml();
+                            for (int i = 0; i < listToDo.tasks.Count; i++)
+                            {
+                                Console.WriteLine($"{i + 1}. { listToDo.tasks[i].IsDone} { listToDo.tasks[i].Title}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Задач нет");
                         }
                         Console.WriteLine("Введите номер задачи, которую хотите удалить");
                         string numTask = Console.ReadLine();
                         if (IsNum(numTask))
                         {
-                            if (0 <= (Convert.ToInt32(numTask) - 1) && Convert.ToInt32(numTask) < listToDo.tasks.Count)
+                            if (0 <= (Convert.ToInt32(numTask) - 1) && Convert.ToInt32(numTask) <= listToDo.tasks.Count)
                             {
                                 listToDo.tasks[Convert.ToInt32(numTask) - 1].IsDone = "[X]";
                                 SerializeToXml(listToDo);
@@ -123,8 +139,12 @@ namespace Lesson5_5
                         ToDo toDo = new ToDo { Title = task, IsDone = "[O]" };
                         if (File.Exists("tasks.xml"))
                         {
-                            listToDo = DeserializeFromXml();
+                            if (File.Exists("tasks.xml"))
+                            {
+                                listToDo = DeserializeFromXml();
+                            }
                         }
+
                         listToDo.tasks.Add(toDo);
                         SerializeToXml(listToDo);
                         break;
@@ -133,10 +153,17 @@ namespace Lesson5_5
                         {
                             listToDo.tasks.Clear();
                         }
-                        listToDo = DeserializeFromXml();
-                        for (int i = 0; i < listToDo.tasks.Count; i++)
+                        if (File.Exists("tasks.xml"))
                         {
-                            Console.WriteLine($"{i + 1}. { listToDo.tasks[i].IsDone} { listToDo.tasks[i].Title}");
+                            listToDo = DeserializeFromXml();
+                            for (int i = 0; i < listToDo.tasks.Count; i++)
+                            {
+                                Console.WriteLine($"{i + 1}. { listToDo.tasks[i].IsDone} { listToDo.tasks[i].Title}");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Задач нет");
                         }
                         Console.WriteLine("Введите номер задачи, которую хотите удалить");
                         string numDelTask = Console.ReadLine();
@@ -146,6 +173,7 @@ namespace Lesson5_5
                             {
                                 listToDo.tasks.RemoveAt(Convert.ToInt32(numDelTask) - 1);
                                 SerializeToXml(listToDo);
+                                Console.WriteLine("Задача удалена");
                             }
                             else
                             {
