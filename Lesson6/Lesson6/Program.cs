@@ -87,7 +87,7 @@ namespace Lesson6
                                         Console.WriteLine("Введите ID процесса");
                                         Process processDelID = Process.GetProcessById(Convert.ToInt32(Console.ReadLine().Trim()));
                                         processDelID.Kill();
-                                        Console.WriteLine("Процесс завершен");
+                                        Console.WriteLine("Процесс завершен с кодом " + processDelID.ExitCode);
                                         break;
                                 }
                                 break;
@@ -99,7 +99,7 @@ namespace Lesson6
                                     {
                                         Process processDelByID = Process.GetProcessById(Convert.ToInt32(Console.ReadLine().Trim()));
                                         processDelByID.Kill();
-                                        Console.WriteLine("Процесс завершен");
+                                        Console.WriteLine("Процесс завершен с кодом " + processDelByID.ExitCode);
                                         break;
                                     }
                                     catch (FormatException)
