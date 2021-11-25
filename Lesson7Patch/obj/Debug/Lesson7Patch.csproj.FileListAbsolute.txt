@@ -1,0 +1,7 @@
+C:\Users\admin\Desktop\geekbrains\Lesson7Patch\bin\Debug\Lesson7.exe.config
+C:\Users\admin\Desktop\geekbrains\Lesson7Patch\bin\Debug\Lesson7.exe
+C:\Users\admin\Desktop\geekbrains\Lesson7Patch\bin\Debug\Lesson7.pdb
+C:\Users\admin\Desktop\geekbrains\Lesson7Patch\obj\Debug\Lesson7Patch.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\geekbrains\Lesson7Patch\obj\Debug\Lesson7Patch.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\geekbrains\Lesson7Patch\obj\Debug\Lesson7.exe
+C:\Users\admin\Desktop\geekbrains\Lesson7Patch\obj\Debug\Lesson7.pdb
