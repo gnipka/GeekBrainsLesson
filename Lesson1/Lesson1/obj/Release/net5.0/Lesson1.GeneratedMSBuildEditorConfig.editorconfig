@@ -6,5 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
-build_property.RootNamespace = Lesson5_2
-build_property.ProjectDir = C:\Users\admin\Source\Repos\gnipka\GeekBrainsLesson\Lesson5\Lesson5_2\
+build_property.RootNamespace = Lesson1
+build_property.ProjectDir = C:\Users\admin\Source\Repos\gnipka\GeekBrainsLesson\Lesson1\Lesson1\
